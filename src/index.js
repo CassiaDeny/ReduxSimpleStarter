@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search-bar';
+import YTSearch from 'youtube-api-search';
 import KEYS from './../key'; 
 
 //create a new component. This component should produce some HTML
@@ -9,6 +10,10 @@ class App extends Component {
         super(props);
 
         this.state = { videos: [] };
+
+        YTSearch({key: KEYS.api, term: 'surfboards'}, videos => {
+            this.setState({ videos });
+        })
         
     };
 
