@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search-bar';
-import KEYS from './../key';
-
+import KEYS from './../key'; 
 
 //create a new component. This component should produce some HTML
-const App = () => {
-    return (
-        <div>
-            <SearchBar />
-        </div>
-    ); 
+class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { videos: [] };
+        
+    };
+
+    render() {
+        return (
+            <div>
+                <SearchBar />
+            </div>
+        );
+    } 
 }
 
 //Take this component's generated HTML and put it on the page (in the DOM)
