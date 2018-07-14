@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './components/search-bar';
+import VideoList from './components/video-list';
 import YTSearch from 'youtube-api-search';
 import KEYS from './../key'; 
 
@@ -21,6 +22,7 @@ class App extends Component {
         return (
             <div>
                 <SearchBar />
+                <VideoList videos={this.state.videos} />
             </div>
         );
     } 
